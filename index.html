@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    ============================================================
+    LION ILUSTRE — SITIO WEB OFICIAL
+    ============================================================
+    Cómo está organizado este archivo:
+    1. <head>: metadatos, SEO, favicon, fuentes (NO cambies esto
+       salvo que sepas lo que haces, excepto los textos marcados
+       con "EDITA AQUÍ").
+    2. <body>: secciones en orden, cada una con un comentario
+       que explica qué es y qué puedes cambiar.
+
+    TEXTOS: busca las marcas "EDITA AQUÍ" para saber qué frases
+    puedes reemplazar sin miedo a romper el diseño.
+    IMÁGENES: todas las imágenes son marcadores (placeholders)
+    con un recuadro punteado. Reemplaza el atributo "src" de
+    cada <img> por la ruta de tu imagen real (por ejemplo
+    "imagenes/foto-perfil.jpg") y bórralo del recuadro.
+    COLORES: se controlan todos desde variables al inicio de
+    style.css (sección ":root"), no hace falta tocar el HTML.
+    ============================================================
+  -->
+
+  <!-- ===== SEO BÁSICO ===== -->
+  <!-- EDITA AQUÍ: título que aparece en la pestaña del navegador y en Google -->
+  <title>Lion Ilustre | Productor Musical, Beatmaker y Creador de Contenido</title>
+
+  <!-- EDITA AQUÍ: descripción que Google muestra debajo del título en resultados de búsqueda (máx. ~160 caracteres) -->
+  <meta name="description" content="Lion Ilustre: productor musical y beatmaker independiente. Beats, álbumes, tutoriales de producción, IA aplicada a la música y servicios para artistas.">
+  <meta name="keywords" content="Lion Ilustre, productor musical, beatmaker, beats, catálogo de beats, tutoriales de producción musical, Kontakt, marketing musical, YouTube para artistas, artista independiente, Soacha">
+  <meta name="author" content="Lion Ilustre">
+  <link rel="canonical" href="https://lionilustre.web.app/">
+
+  <!-- ===== OPEN GRAPH (vista previa al compartir en redes) ===== -->
+  <meta property="og:type" content="website">
+  <!-- EDITA AQUÍ: mismos textos que el título/descripción de arriba, pensados para WhatsApp/Instagram/Facebook -->
+  <meta property="og:title" content="Lion Ilustre | Productor Musical, Beatmaker y Creador de Contenido">
+  <meta property="og:description" content="Beats, álbumes, tutoriales de producción y recursos para artistas independientes. Todo el universo de Lion Ilustre en un solo lugar.">
+  <!-- EDITA AQUÍ: sube una imagen 1200x630px (recomendado) y pon aquí su URL completa -->
+  <meta property="og:image" content="https://lionilustre.web.app/imagenes/og-cover.jpg">
+  <meta property="og:url" content="https://lionilustre.web.app/">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- ===== FUENTES (Google Fonts, gratis) =====
+       Big Shoulders Display: fuente de titulares, carácter urbano/industrial.
+       Work Sans: fuente de cuerpo, muy legible.
+       Space Mono: fuente "de datos" (BPM, tonalidad, catálogo, fechas). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!-- Botón de accesibilidad: permite saltar el menú con teclado -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ============================================================
+       BARRA DE ECUALIZADOR DE PROGRESO
+       Elemento de firma visual: una fila de barras estilo
+       ecualizador que se "llena" según el scroll de la página,
+       como si el usuario estuviera reproduciendo el sitio.
+       No requiere edición.
+     ============================================================ -->
+  <div class="eq-progress" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ============================================================
+       ENCABEZADO / NAVEGACIÓN
+       EDITA AQUÍ: el nombre "LION ILUSTRE" y los textos del menú.
+       Los enlaces (href="#seccion") ya están conectados a cada
+       sección de la página, no los cambies.
+     ============================================================ -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo" aria-label="Lion Ilustre, ir al inicio">
+        <span class="logo-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        LION <strong>ILUSTRE</strong>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="navMenu" class="nav-menu">
+        <ul>
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#discografia">Discografía</a></li>
+          <li><a href="#beats">Beats</a></li>
+          <li><a href="#academia">Academia</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#lanzamientos">Lanzamientos</a></li>
+          <li><a href="#tienda">Tienda</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+
+    <!-- ============================================================
+         HERO — "VISTA DE SESIÓN"
+         Simula la pantalla de un programa de producción musical
+         (DAW): el nombre del artista es el "proyecto abierto" y
+         las barras animadas son la "pista" reproduciéndose.
+         EDITA AQUÍ: el eyebrow, el titular, el subtítulo y los
+         dos botones.
+       ============================================================ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <!-- EDITA AQUÍ: pequeña etiqueta superior -->
+          <p class="eyebrow">Sesión en vivo — Soacha, Colombia</p>
+          <!-- EDITA AQUÍ: titular principal -->
+          <h1>LION<br><span class="text-outline">ILUSTRE</span></h1>
+          <!-- EDITA AQUÍ: subtítulo / frase de posicionamiento -->
+          <p class="hero-subtitle">
+            Produzco, mezclo y enseño. Beats, álbumes y recursos para que
+            artistas independientes suenen — y crezcan — como se lo merecen.
+          </p>
+          <div class="hero-actions">
+            <a href="#beats" class="btn btn-primary">Escuchar catálogo</a>
+            <a href="#contacto" class="btn btn-outline">Agendar sesión</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <!-- "Pista" de reproducción decorativa: 24 barras animadas por CSS -->
+          <div class="track-strip">
+            <div class="track-strip-head">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="track-name">lion_ilustre_master.wav</span>
+            </div>
+            <div class="waveform" id="heroWaveform"><!-- barras generadas por script.js --></div>
+            <div class="track-strip-foot">
+              <span>00:00</span>
+              <span class="bpm-tag">128 BPM · Am</span>
+              <span>03:41</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Marquesina de palabras clave del mundo de Lion Ilustre -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>PRODUCCIÓN</span><span>·</span><span>BEATS</span><span>·</span>
+          <span>MEZCLA</span><span>·</span><span>MASTERING</span><span>·</span>
+          <span>KONTAKT</span><span>·</span><span>IA MUSICAL</span><span>·</span>
+          <span>BRANDING</span><span>·</span><span>YOUTUBE</span><span>·</span>
+          <span>PRODUCCIÓN</span><span>·</span><span>BEATS</span><span>·</span>
+          <span>MEZCLA</span><span>·</span><span>MASTERING</span><span>·</span>
+          <span>KONTAKT</span><span>·</span><span>IA MUSICAL</span><span>·</span>
+          <span>BRANDING</span><span>·</span><span>YOUTUBE</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BIOGRAFÍA
+         EDITA AQUÍ: los 3 párrafos de texto y la foto (busca el
+         <img> con la clase "bio-photo").
+       ============================================================ -->
+    <section class="section" id="bio">
+      <div class="container section-grid">
+        <div class="section-media reveal">
+          <!-- EDITA AQUÍ: cambia el "src" por tu foto real -->
+          <img class="bio-photo" src="https://placehold.co/640x760/1d1914/e8a33d?text=Foto+de+Lion+Ilustre" alt="Retrato de Lion Ilustre en su estudio de producción" loading="lazy">
+          <span class="media-tag">Track 01</span>
+        </div>
+        <div class="section-copy reveal">
+          <p class="section-eyebrow">Biografía</p>
+          <h2>De Soacha para el mundo</h2>
+          <!-- EDITA AQUÍ: reescribe estos 3 párrafos con tu historia real -->
+          <p>
+            Lion Ilustre nació en los barrios de Soacha, Cundinamarca, entre
+            parlantes prestados y sesiones improvisadas. Ahí aprendió que un
+            buen beat no necesita un estudio grande: necesita una idea clara
+            y muchas horas de trabajo.
+          </p>
+          <p>
+            Hoy combina producción musical, inteligencia artificial y
+            estrategia de contenido para ayudar a artistas independientes a
+            construir un sonido propio y una marca que se sostenga en el
+            tiempo, no solo un lanzamiento.
+          </p>
+          <p>
+            Su trabajo se mueve entre tres frentes: la música que firma como
+            artista, los beats que produce para otros y la educación que
+            comparte para que la próxima generación no tenga que aprender
+            todo a la fuerza, como él tuvo que hacerlo.
+          </p>
+          <ul class="bio-stats">
+            <li><span class="num">+150</span><span>Beats producidos</span></li>
+            <li><span class="num">+80</span><span>Tutoriales publicados</span></li>
+            <li><span class="num">100%</span><span>Independiente</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DISCOGRAFÍA
+         EDITA AQUÍ: cada <article class="album-card"> es un
+         álbum/single. Copia y pega el bloque completo para añadir
+         más. Cambia portada, título, año y el enlace de "Escuchar".
+       ============================================================ -->
+    <section class="section section-alt" id="discografia">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Discografía</p>
+          <h2>Álbumes &amp; sencillos</h2>
+          <p class="section-lead">Cada lanzamiento, en orden de catálogo.</p>
+        </div>
+
+        <div class="album-grid">
+          <!-- EDITA AQUÍ: álbum 1 -->
+          <article class="album-card reveal">
+            <div class="album-cover">
+              <img src="https://placehold.co/500x500/14120f/e8a33d?text=Portada+01" alt="Portada del álbum Raíces de Barrio" loading="lazy">
+              <a href="#" class="play-btn" aria-label="Reproducir Raíces de Barrio">▶</a>
+            </div>
+            <p class="cat-number">CAT. 001</p>
+            <h3>Raíces de Barrio</h3>
+            <p class="album-meta">Álbum · 2024</p>
+          </article>
+
+          <!-- EDITA AQUÍ: álbum 2 -->
+          <article class="album-card reveal">
+            <div class="album-cover">
+              <img src="https://placehold.co/500x500/14120f/b8402b?text=Portada+02" alt="Portada del sencillo Luz de Neón" loading="lazy">
+              <a href="#" class="play-btn" aria-label="Reproducir Luz de Neón">▶</a>
+            </div>
+            <p class="cat-number">CAT. 002</p>
+            <h3>Luz de Neón</h3>
+            <p class="album-meta">Sencillo · 2024</p>
+          </article>
+
+          <!-- EDITA AQUÍ: álbum 3 -->
+          <article class="album-card reveal">
+            <div class="album-cover">
+              <img src="https://placehold.co/500x500/14120f/f0e9da?text=Portada+03" alt="Portada del EP Estudio Abierto" loading="lazy">
+              <a href="#" class="play-btn" aria-label="Reproducir Estudio Abierto">▶</a>
+            </div>
+            <p class="cat-number">CAT. 003</p>
+            <h3>Estudio Abierto</h3>
+            <p class="album-meta">EP · 2025</p>
+          </article>
+
+          <!-- EDITA AQUÍ: álbum 4 -->
+          <article class="album-card reveal">
+            <div class="album-cover">
+              <img src="https://placehold.co/500x500/14120f/5c8c6b?text=Portada+04" alt="Portada del sencillo Ilustre" loading="lazy">
+              <a href="#" class="play-btn" aria-label="Reproducir Ilustre">▶</a>
+            </div>
+            <p class="cat-number">CAT. 004</p>
+            <h3>Ilustre</h3>
+            <p class="album-meta">Sencillo · 2025</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATÁLOGO DE BEATS
+         Se presenta como una lista de pistas de estudio (como en
+         un DAW): número, nombre, BPM, tonalidad y género. Esta
+         numeración SÍ tiene sentido porque un catálogo de beats
+         es, en la vida real, una lista ordenada por número.
+         EDITA AQUÍ: filtros de género y cada fila ".beat-row".
+       ============================================================ -->
+    <section class="section" id="beats">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Catálogo</p>
+          <h2>Beats disponibles</h2>
+          <p class="section-lead">Previews cortos. Licencias y precios se hablan por contacto directo.</p>
+        </div>
+
+        <!-- EDITA AQUÍ: nombres de los géneros de tus filtros -->
+        <div class="beat-filters" role="group" aria-label="Filtrar beats por género">
+          <button class="filter-btn is-active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="trap">Trap</button>
+          <button class="filter-btn" data-filter="boombap">Boom Bap</button>
+          <button class="filter-btn" data-filter="rnb">R&amp;B</button>
+          <button class="filter-btn" data-filter="reggaeton">Reggaetón</button>
+        </div>
+
+        <div class="beat-list" id="beatList">
+          <div class="beat-row beat-row-head" aria-hidden="true">
+            <span>#</span><span>Beat</span><span>Género</span><span>BPM</span><span>Tono</span><span></span>
+          </div>
+
+          <!-- EDITA AQUÍ: fila de ejemplo 1. "data-genre" debe coincidir con un data-filter de arriba -->
+          <div class="beat-row" data-genre="trap">
+            <span class="beat-num">001</span>
+            <button class="beat-play" aria-label="Reproducir preview de Bajo Presión" data-track="Bajo Presión">▶</button>
+            <span class="beat-name">Bajo Presión</span>
+            <span class="beat-genre">Trap</span>
+            <span class="beat-bpm">150</span>
+            <span class="beat-key">F# min</span>
+            <a href="#contacto" class="beat-cta">Consultar</a>
+          </div>
+
+          <!-- EDITA AQUÍ: fila de ejemplo 2 -->
+          <div class="beat-row" data-genre="boombap">
+            <span class="beat-num">002</span>
+            <button class="beat-play" aria-label="Reproducir preview de Vieja Escuela" data-track="Vieja Escuela">▶</button>
+            <span class="beat-name">Vieja Escuela</span>
+            <span class="beat-genre">Boom Bap</span>
+            <span class="beat-bpm">92</span>
+            <span class="beat-key">C min</span>
+            <a href="#contacto" class="beat-cta">Consultar</a>
+          </div>
+
+          <!-- EDITA AQUÍ: fila de ejemplo 3 -->
+          <div class="beat-row" data-genre="rnb">
+            <span class="beat-num">003</span>
+            <button class="beat-play" aria-label="Reproducir preview de Terciopelo" data-track="Terciopelo">▶</button>
+            <span class="beat-name">Terciopelo</span>
+            <span class="beat-genre">R&amp;B</span>
+            <span class="beat-bpm">78</span>
+            <span class="beat-key">A min</span>
+            <a href="#contacto" class="beat-cta">Consultar</a>
+          </div>
+
+          <!-- EDITA AQUÍ: fila de ejemplo 4 -->
+          <div class="beat-row" data-genre="reggaeton">
+            <span class="beat-num">004</span>
+            <button class="beat-play" aria-label="Reproducir preview de Calle Real" data-track="Calle Real">▶</button>
+            <span class="beat-name">Calle Real</span>
+            <span class="beat-genre">Reggaetón</span>
+            <span class="beat-bpm">96</span>
+            <span class="beat-key">G min</span>
+            <a href="#contacto" class="beat-cta">Consultar</a>
+          </div>
+
+          <!-- EDITA AQUÍ: fila de ejemplo 5 -->
+          <div class="beat-row" data-genre="trap">
+            <span class="beat-num">005</span>
+            <button class="beat-play" aria-label="Reproducir preview de Sombra Ilustre" data-track="Sombra Ilustre">▶</button>
+            <span class="beat-name">Sombra Ilustre</span>
+            <span class="beat-genre">Trap</span>
+            <span class="beat-bpm">140</span>
+            <span class="beat-key">D min</span>
+            <a href="#contacto" class="beat-cta">Consultar</a>
+          </div>
+        </div>
+        <p class="beat-empty" id="beatEmpty" hidden>No hay beats en esta categoría todavía. Vuelve pronto.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ACADEMIA / CONTENIDO EDUCATIVO
+         EDITA AQUÍ: cada tarjeta de tutorial. Cambia el enlace
+         "href" para que apunte a tu video real de YouTube.
+       ============================================================ -->
+    <section class="section section-alt" id="academia">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Academia Lion Ilustre</p>
+          <h2>Aprende a producir</h2>
+          <p class="section-lead">Tutoriales de producción, Kontakt, IA aplicada a la música y marketing para artistas.</p>
+        </div>
+
+        <div class="edu-grid">
+          <!-- EDITA AQUÍ: tutorial 1 -->
+          <a class="edu-card reveal" href="https://youtube.com/@tucanal" target="_blank" rel="noopener">
+            <div class="edu-thumb">
+              <img src="https://placehold.co/480x270/1d1914/e8a33d?text=Tutorial+01" alt="Miniatura del tutorial: cómo programar un groove de batería" loading="lazy">
+              <span class="edu-play">▶</span>
+              <span class="edu-duration">12:04</span>
+            </div>
+            <p class="edu-tag">Producción</p>
+            <h3>Cómo programar un groove que no suene a máquina</h3>
+          </a>
+
+          <!-- EDITA AQUÍ: tutorial 2 -->
+          <a class="edu-card reveal" href="https://youtube.com/@tucanal" target="_blank" rel="noopener">
+            <div class="edu-thumb">
+              <img src="https://placehold.co/480x270/1d1914/b8402b?text=Tutorial+02" alt="Miniatura del tutorial: librerías Kontakt esenciales" loading="lazy">
+              <span class="edu-play">▶</span>
+              <span class="edu-duration">08:47</span>
+            </div>
+            <p class="edu-tag">Kontakt</p>
+            <h3>3 librerías de Kontakt que uso en cada sesión</h3>
+          </a>
+
+          <!-- EDITA AQUÍ: tutorial 3 -->
+          <a class="edu-card reveal" href="https://youtube.com/@tucanal" target="_blank" rel="noopener">
+            <div class="edu-thumb">
+              <img src="https://placehold.co/480x270/1d1914/f0e9da?text=Tutorial+03" alt="Miniatura del tutorial: inteligencia artificial en la música" loading="lazy">
+              <span class="edu-play">▶</span>
+              <span class="edu-duration">15:22</span>
+            </div>
+            <p class="edu-tag">IA Musical</p>
+            <h3>Cómo uso la IA sin perder mi sonido propio</h3>
+          </a>
+
+          <!-- EDITA AQUÍ: tutorial 4 -->
+          <a class="edu-card reveal" href="https://youtube.com/@tucanal" target="_blank" rel="noopener">
+            <div class="edu-thumb">
+              <img src="https://placehold.co/480x270/1d1914/5c8c6b?text=Tutorial+04" alt="Miniatura del tutorial: crecer en YouTube siendo músico" loading="lazy">
+              <span class="edu-play">▶</span>
+              <span class="edu-duration">10:15</span>
+            </div>
+            <p class="edu-tag">Marketing musical</p>
+            <h3>YouTube para artistas: qué publicar cada semana</h3>
+          </a>
+        </div>
+
+        <p class="edu-more reveal">
+          <a href="https://youtube.com/@tucanal" target="_blank" rel="noopener" class="btn btn-outline">Ver todos los tutoriales</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VIDEOS DESTACADOS
+         EDITA AQUÍ: reemplaza el "src" de cada iframe por el link
+         de "insertar" (embed) de tu video real de YouTube.
+       ============================================================ -->
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Videos</p>
+          <h2>Últimos lanzamientos audiovisuales</h2>
+        </div>
+        <div class="video-grid">
+          <!-- EDITA AQUÍ: video 1 -->
+          <div class="video-embed reveal">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video oficial de Lion Ilustre" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <!-- EDITA AQUÍ: video 2 -->
+          <div class="video-embed reveal">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Detrás de cámaras de producción" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALERÍA
+         EDITA AQUÍ: cambia las imágenes. El "lightbox" (ver en
+         grande al hacer clic) ya funciona automáticamente con
+         script.js, no necesitas tocar nada más.
+       ============================================================ -->
+    <section class="section section-alt" id="galeria">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Galería</p>
+          <h2>Del estudio al escenario</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x600/1d1914/e8a33d?text=Foto+1" alt="En el estudio, sesión de mezcla" loading="lazy"></button>
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x800/1d1914/b8402b?text=Foto+2" alt="Grabación vocal" loading="lazy"></button>
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x600/1d1914/f0e9da?text=Foto+3" alt="Presentación en vivo" loading="lazy"></button>
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x800/1d1914/5c8c6b?text=Foto+4" alt="Sesión de composición" loading="lazy"></button>
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x600/1d1914/e8a33d?text=Foto+5" alt="Equipo de producción" loading="lazy"></button>
+          <button class="gallery-item reveal"><img src="https://placehold.co/600x800/1d1914/b8402b?text=Foto+6" alt="Con otros artistas de Soacha" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRÓXIMOS LANZAMIENTOS
+         EDITA AQUÍ: cada fila de la lista con la fecha real.
+       ============================================================ -->
+    <section class="section" id="lanzamientos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Próximamente</p>
+          <h2>En la banda de producción</h2>
+        </div>
+        <ul class="release-list">
+          <!-- EDITA AQUÍ: lanzamiento 1 -->
+          <li class="release-row reveal">
+            <span class="release-date">
+              <span class="release-day">14</span>
+              <span class="release-month">Ago</span>
+            </span>
+            <span class="release-info">
+              <h3>Sombra Ilustre (Sencillo)</h3>
+              <p>Trap con guitarras acústicas y coros del barrio.</p>
+            </span>
+            <span class="release-status status-progreso">En mezcla</span>
+          </li>
+          <!-- EDITA AQUÍ: lanzamiento 2 -->
+          <li class="release-row reveal">
+            <span class="release-date">
+              <span class="release-day">02</span>
+              <span class="release-month">Oct</span>
+            </span>
+            <span class="release-info">
+              <h3>Curso: IA para producir más rápido</h3>
+              <p>Serie de 5 tutoriales sobre herramientas de IA en el flujo de trabajo.</p>
+            </span>
+            <span class="release-status status-planeado">Planeado</span>
+          </li>
+          <!-- EDITA AQUÍ: lanzamiento 3 -->
+          <li class="release-row reveal">
+            <span class="release-date">
+              <span class="release-day">20</span>
+              <span class="release-month">Nov</span>
+            </span>
+            <span class="release-info">
+              <h3>Raíces de Barrio, Vol. 2 (EP)</h3>
+              <p>Segunda parte del proyecto insignia, con 3 colaboraciones.</p>
+            </span>
+            <span class="release-status status-planeado">Planeado</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REDES Y PLATAFORMAS DE STREAMING
+         EDITA AQUÍ: reemplaza cada "href='#'" por tu enlace real.
+       ============================================================ -->
+    <section class="section section-alt" id="redes">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Sígueme</p>
+          <h2>Redes &amp; streaming</h2>
+        </div>
+        <div class="social-grid">
+          <!-- EDITA AQUÍ: cada enlace -->
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.6 14.6c-.2.3-.5.4-.8.2-2.2-1.3-4.9-1.6-8.2-.9-.3.1-.6-.1-.7-.4-.1-.3.1-.6.4-.7 3.5-.8 6.5-.4 9 1 .3.2.4.5.3.8Zm1.2-2.7c-.2.3-.6.4-.9.2-2.5-1.5-6.3-2-9.3-1.1-.4.1-.7-.1-.8-.4-.1-.4.1-.7.4-.8 3.4-1 7.6-.5 10.5 1.2.3.2.4.6.1.9Zm.1-2.8c-3-1.8-7.9-2-10.8-1.1-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.3-1 8.8-.8 12.2 1.2.4.2.5.7.3 1-.3.4-.8.5-1.3.3Z"/></svg>
+            <span>Spotify</span>
+          </a>
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C15.9 4 12 4 12 4s-3.9 0-6.7.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2.1-.8 2.1S2.2 9 2.2 10.7v1.6C2.2 14 2.4 15.8 2.4 15.8s.2 1.5.8 2.1c.8.8 1.9.8 2.3.9 1.7.2 7.5.2 7.5.2s3.9 0 6.7-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2.1.8-2.1s.2-1.7.2-3.4v-1.6c0-1.7-.2-3.5-.2-3.5ZM9.9 14.7V8.9l5.4 2.9-5.4 2.9Z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4.1.1 1.1 0 1.7.2 2.1.4.5.2.9.4 1.3.8.4.4.6.8.8 1.3.2.4.3 1 .4 2.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.7-.4 2.1-.2.5-.4.9-.8 1.3-.4.4-.8.6-1.3.8-.4.2-1 .3-2.1.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.7-.2-2.1-.4-.5-.2-.9-.4-1.3-.8-.4-.4-.6-.8-.8-1.3-.2-.4-.3-1-.4-2.1-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1.1.2-1.7.4-2.1.2-.5.4-.9.8-1.3.4-.4.8-.6 1.3-.8.4-.2 1-.3 2.1-.4 1.1-.1 1.4-.1 4.1-.1Zm0 3.4a6.4 6.4 0 1 0 0 12.8 6.4 6.4 0 0 0 0-12.8Zm0 10.6a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4Zm6.6-10.8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2h-3.1v13.2c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6 0 .8.1V9.4a5.9 5.9 0 0 0-.8-.1A5.9 5.9 0 0 0 5 15.2a5.9 5.9 0 0 0 5.9 5.9 5.9 5.9 0 0 0 5.9-5.9V8.4c1.1.8 2.5 1.3 4 1.3V6.6c-1.9 0-3.4-1.4-3.6-3.2-.3-.6-.5-.9-.5-1.4Z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.9 6.7a12.5 12.5 0 0 1-3 3v.8c0 8-6.1 17.3-17.3 17.3v0A17.2 17.2 0 0 1 0 24.7v-4.1c-1.8 0-3.4-.5-4.8-1.3.2 0 .4 0 .6 0 1.5 0 2.9-.5 4-1.4a6.1 6.1 0 0 1-5.7-4.2c.4.1.7.1 1.1.1.6 0 1.1-.1 1.6-.2a6.1 6.1 0 0 1-4.9-6v-.1c.6.4 1.4.6 2.2.6a6.1 6.1 0 0 1-1.9-8.1 17.3 17.3 0 0 0 12.6 6.4c-.1-.4-.2-.9-.2-1.4a6.1 6.1 0 0 1 10.6-4.1 12.1 12.1 0 0 0 3.9-1.5 6.1 6.1 0 0 1-2.7 3.4 12.2 12.2 0 0 0 3.5-1 12.7 12.7 0 0 1-3 3.1Z" transform="translate(0 1) scale(0.75)"/></svg>
+            <span>Twitter / X</span>
+          </a>
+          <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.2 3.6c-1-.5-2-.8-3.1-1a4.6 4.6 0 0 0-2.2 2.5A19 19 0 0 0 12 4a19 19 0 0 0-5.9 1.1A4.6 4.6 0 0 0 3.9 2.6c-1.1.2-2.1.5-3.1 1A21.3 21.3 0 0 0 .3 17.4a19.4 19.4 0 0 0 5.7 2.9s.7-.9 1.3-1.9a10 10 0 0 1-2.1-1s.4.3 1.1.6a12.9 12.9 0 0 0 11.4 0c.7-.3 1.1-.6 1.1-.6a10 10 0 0 1-2.1 1c.6 1 1.3 1.9 1.3 1.9a19.4 19.4 0 0 0 5.7-2.9 21.3 21.3 0 0 0-.4-13.8Z"/></svg>
+            <span>Discord</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MERCHANDISING (SOLO CATÁLOGO, SIN PAGOS)
+         EDITA AQUÍ: producto, imagen y disponibilidad. No hay
+         botón de "comprar": solo "Más información" hacia contacto,
+         como pide la marca.
+       ============================================================ -->
+    <section class="section section-alt" id="tienda">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Tienda</p>
+          <h2>Catálogo de merchandising</h2>
+          <p class="section-lead">Catálogo informativo. Para pedidos, escribe por el formulario de contacto.</p>
+        </div>
+        <div class="merch-grid">
+          <!-- EDITA AQUÍ: producto 1 -->
+          <article class="merch-card reveal">
+            <img src="https://placehold.co/500x500/1d1914/e8a33d?text=Camiseta" alt="Camiseta negra con logo Lion Ilustre" loading="lazy">
+            <h3>Camiseta "Ilustre"</h3>
+            <p class="merch-status">Disponible por encargo</p>
+          </article>
+          <!-- EDITA AQUÍ: producto 2 -->
+          <article class="merch-card reveal">
+            <img src="https://placehold.co/500x500/1d1914/b8402b?text=Gorra" alt="Gorra bordada con logo Lion Ilustre" loading="lazy">
+            <h3>Gorra bordada</h3>
+            <p class="merch-status">Disponible por encargo</p>
+          </article>
+          <!-- EDITA AQUÍ: producto 3 -->
+          <article class="merch-card reveal">
+            <img src="https://placehold.co/500x500/1d1914/f0e9da?text=Vinilo" alt="Edición especial en vinilo del álbum Raíces de Barrio" loading="lazy">
+            <h3>Vinilo "Raíces de Barrio"</h3>
+            <p class="merch-status">Próximamente</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICIOS
+         EDITA AQUÍ: título, descripción y lista de cada servicio.
+       ============================================================ -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-eyebrow">Servicios</p>
+          <h2>Contrataciones &amp; colaboraciones</h2>
+        </div>
+        <div class="services-grid">
+          <!-- EDITA AQUÍ: servicio 1 -->
+          <article class="service-card reveal">
+            <p class="cat-number">01</p>
+            <h3>Producción &amp; mezcla</h3>
+            <p>Beats a la medida, grabación, mezcla y masterización para tu proyecto.</p>
+          </article>
+          <!-- EDITA AQUÍ: servicio 2 -->
+          <article class="service-card reveal">
+            <p class="cat-number">02</p>
+            <h3>Mentoría de producción</h3>
+            <p>Sesiones 1 a 1 para mejorar tu flujo de trabajo, mezcla e IA aplicada.</p>
+          </article>
+          <!-- EDITA AQUÍ: servicio 3 -->
+          <article class="service-card reveal">
+            <p class="cat-number">03</p>
+            <h3>Branding para artistas</h3>
+            <p>Identidad visual, portadas y estrategia de contenido para tu marca musical.</p>
+          </article>
+          <!-- EDITA AQUÍ: servicio 4 -->
+          <article class="service-card reveal">
+            <p class="cat-number">04</p>
+            <h3>Páginas web para músicos</h3>
+            <p>Sitios como este: rápidos, con dominio propio y listos para crecer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACTO
+         Formulario listo para conectarse a Formspree (gratis, sin
+         backend propio). Instrucciones dentro del comentario.
+         EDITA AQUÍ: reemplaza "TU_ID_DE_FORMSPREE" por el ID que
+         te da https://formspree.io al crear un formulario gratis
+         (formulario nuevo → copia el código que aparece después
+         de "formspree.io/f/"). Mientras tanto, el formulario cae
+         automáticamente a un correo "mailto".
+       ============================================================ -->
+    <section class="section section-alt" id="contacto">
+      <div class="container section-grid section-grid-contact">
+        <div class="section-copy reveal">
+          <p class="section-eyebrow">Contacto</p>
+          <h2>Grabemos algo juntos</h2>
+          <p>
+            Contrataciones, colaboraciones, beats a la medida o simplemente
+            saludar: este formulario llega directo a mi correo.
+          </p>
+          <!-- EDITA AQUÍ: tu correo real, se usa como respaldo del formulario -->
+          <p class="contact-direct">También puedes escribir directo a <a href="mailto:contacto@lionilustre.com">contacto@lionilustre.com</a></p>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+          <div class="form-row">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="_replyto" required autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label for="motivo">Motivo</label>
+            <select id="motivo" name="motivo">
+              <option value="Contratación">Contratación</option>
+              <option value="Compra de beat">Compra de beat</option>
+              <option value="Colaboración">Colaboración</option>
+              <option value="Mentoría">Mentoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+          <!-- Campo oculto "anti-spam": si un robot lo llena, se descarta el envío -->
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIE DE PÁGINA
+       EDITA AQUÍ: año (se actualiza solo con script.js), nombre y
+       enlaces legales si los necesitas.
+     ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#inicio" class="logo logo-footer">
+        <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        LION <strong>ILUSTRE</strong>
+      </a>
+      <p>© <span id="anioActual"></span> Lion Ilustre. Todos los derechos reservados.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       LIGHTBOX DE GALERÍA (modal de imagen grande)
+       No requiere edición: se llena automáticamente con la imagen
+       en la que el usuario hace clic.
+     ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">✕</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+/* ================================================================
+   LION ILUSTRE — SCRIPT.JS
+   ================================================================
+   Todo el JavaScript de esta página está aquí, sin librerías
+   externas. Está dividido en bloques independientes: si algo no
+   te sirve, puedes borrar su bloque completo sin romper el resto.
+
+   ÍNDICE:
+     1. Menú móvil (hamburguesa)
+     2. Barra de progreso tipo ecualizador
+     3. Waveform animado del hero (se genera con JS)
+     4. Animaciones al hacer scroll ("reveal")
+     5. Filtro del catálogo de beats
+     6. Reproducción simulada de beats/álbumes (UI, sin audio real)
+     7. Galería con lightbox (ver imagen en grande)
+     8. Envío del formulario de contacto (Formspree + respaldo)
+     9. Año automático en el pie de página
+   ================================================================ */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* --------------------------------------------------------------
+     1. MENÚ MÓVIL
+     Muestra/oculta el menú de navegación en pantallas pequeñas.
+  ----------------------------------------------------------------- */
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function () {
+      const abierto = navMenu.classList.toggle('is-open');
+      navToggle.classList.toggle('is-active', abierto);
+      navToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    });
+
+    // Cierra el menú al tocar un enlace (mejor experiencia en móvil)
+    navMenu.querySelectorAll('a').forEach(function (enlace) {
+      enlace.addEventListener('click', function () {
+        navMenu.classList.remove('is-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* --------------------------------------------------------------
+     2. BARRA DE PROGRESO TIPO ECUALIZADOR
+     Cada una de las 10 barras se "enciende" según qué tan avanzado
+     está el scroll de la página (barra 1 = 10% del scroll, etc).
+  ----------------------------------------------------------------- */
+  const eqBars = document.querySelectorAll('.eq-progress span');
+
+  function actualizarBarraProgreso() {
+    if (!eqBars.length) return;
+    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const porcentaje = alturaTotal > 0 ? (window.scrollY / alturaTotal) : 0;
+    const barrasActivas = Math.round(porcentaje * eqBars.length);
+
+    eqBars.forEach(function (barra, i) {
+      barra.classList.toggle('is-active', i < barrasActivas);
+    });
+  }
+
+  window.addEventListener('scroll', actualizarBarraProgreso, { passive: true });
+  actualizarBarraProgreso();
+
+  /* --------------------------------------------------------------
+     3. WAVEFORM ANIMADO DEL HERO
+     En vez de una imagen fija, generamos 40 barras con alturas
+     aleatorias para simular una forma de onda de audio. Cada barra
+     ya tiene su propia animación definida en style.css.
+  ----------------------------------------------------------------- */
+  const heroWaveform = document.getElementById('heroWaveform');
+  if (heroWaveform) {
+    const TOTAL_BARRAS = 40;
+    for (let i = 0; i < TOTAL_BARRAS; i++) {
+      const barra = document.createElement('span');
+      // Altura y velocidad aleatorias para que no se vea repetitivo
+      const alturaBase = 25 + Math.random() * 75; // entre 25% y 100%
+      const duracion = (1.1 + Math.random() * 1.2).toFixed(2); // entre 1.1s y 2.3s
+      barra.style.height = alturaBase + '%';
+      barra.style.animationDuration = duracion + 's';
+      barra.style.animationDelay = (Math.random() * 1.2).toFixed(2) + 's';
+      heroWaveform.appendChild(barra);
+    }
+  }
+
+  /* --------------------------------------------------------------
+     4. ANIMACIONES AL HACER SCROLL ("reveal")
+     Todos los elementos con clase "reveal" empiezan invisibles
+     (ver style.css) y se muestran con una transición suave cuando
+     entran en la pantalla. Usamos IntersectionObserver, que es
+     nativo del navegador (no requiere ninguna librería).
+  ----------------------------------------------------------------- */
+  const elementosReveal = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window && elementosReveal.length) {
+    const observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('is-visible');
+          observador.unobserve(entrada.target); // ya apareció, no repetir
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elementosReveal.forEach(function (el) { observador.observe(el); });
+  } else {
+    // Si el navegador es muy antiguo, mostramos todo directamente
+    elementosReveal.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* --------------------------------------------------------------
+     5. FILTRO DEL CATÁLOGO DE BEATS
+     Al hacer clic en un botón de género, se muestran solo las
+     filas de beats cuyo atributo "data-genre" coincida.
+     "todos" siempre muestra todo.
+  ----------------------------------------------------------------- */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const beatRows = document.querySelectorAll('.beat-row:not(.beat-row-head)');
+  const beatEmpty = document.getElementById('beatEmpty');
+
+  filterBtns.forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+      boton.classList.add('is-active');
+
+      const filtro = boton.dataset.filter;
+      let visibles = 0;
+
+      beatRows.forEach(function (fila) {
+        const coincide = (filtro === 'todos' || fila.dataset.genre === filtro);
+        fila.classList.toggle('is-hidden', !coincide);
+        if (coincide) visibles++;
+      });
+
+      if (beatEmpty) beatEmpty.hidden = visibles > 0;
+    });
+  });
+
+  /* --------------------------------------------------------------
+     6. REPRODUCCIÓN SIMULADA (interfaz visual, sin archivo de audio)
+     Este bloque SOLO cambia el ícono del botón (▶ ↔ ⏸) para dar
+     sensación de reproducción. Si más adelante añades archivos de
+     audio reales, reemplaza este bloque por un <audio> real: busca
+     la variable "AUDIO_REAL_PENDIENTE" más abajo para la guía.
+  ----------------------------------------------------------------- */
+  // AUDIO_REAL_PENDIENTE:
+  // Para conectar audio real, agrega en el HTML de cada beat algo como:
+  //   <audio src="audios/bajo-presion.mp3"></audio>
+  // y en vez de solo cambiar el ícono, llama a audio.play() / audio.pause().
+  let botonReproduciendoActual = null;
+
+  document.querySelectorAll('.beat-play, .play-btn').forEach(function (boton) {
+    boton.addEventListener('click', function (evento) {
+      evento.preventDefault();
+
+      const esElMismo = botonReproduciendoActual === boton;
+
+      // Apaga cualquier botón que estuviera "sonando"
+      if (botonReproduciendoActual && botonReproduciendoActual !== boton) {
+        botonReproduciendoActual.classList.remove('is-playing');
+        botonReproduciendoActual.textContent = '▶';
+      }
+
+      if (esElMismo) {
+        boton.classList.remove('is-playing');
+        boton.textContent = '▶';
+        botonReproduciendoActual = null;
+      } else {
+        boton.classList.add('is-playing');
+        boton.textContent = '❚❚';
+        botonReproduciendoActual = boton;
+      }
+    });
+  });
+
+  /* --------------------------------------------------------------
+     7. GALERÍA CON LIGHTBOX
+     Al hacer clic en una foto de la galería, se abre en grande
+     sobre un fondo oscuro. Se puede cerrar con el botón ✕, con la
+     tecla Escape o haciendo clic fuera de la imagen.
+  ----------------------------------------------------------------- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  function abrirLightbox(src, alt) {
+    if (!lightbox) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.hidden = false;
+    lightboxClose.focus();
+  }
+
+  function cerrarLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+  }
+
+  galleryItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      const img = item.querySelector('img');
+      abrirLightbox(img.src, img.alt);
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', cerrarLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (evento) {
+      if (evento.target === lightbox) cerrarLightbox();
+    });
+  }
+  document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape') cerrarLightbox();
+  });
+
+  /* --------------------------------------------------------------
+     8. ENVÍO DEL FORMULARIO DE CONTACTO
+     El formulario apunta a Formspree (servicio gratuito para
+     recibir formularios sin programar un backend). Aquí solo
+     evitamos que la página se recargue y mostramos un mensaje de
+     estado. Si el "action" del HTML todavía dice
+     "TU_ID_DE_FORMSPREE", el mensaje avisa que falta configurarlo.
+  ----------------------------------------------------------------- */
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (evento) {
+      evento.preventDefault();
+
+      // Campo "honeypot": si un robot lo llenó, ignoramos el envío
+      const honeypot = contactForm.querySelector('.honeypot');
+      if (honeypot && honeypot.value) return;
+
+      const destinoSinConfigurar = contactForm.action.includes('TU_ID_DE_FORMSPREE');
+
+      if (destinoSinConfigurar) {
+        // Respaldo: abre el correo del usuario con los datos ya escritos
+        const nombre = contactForm.nombre.value;
+        const email = contactForm.email ? contactForm.email.value : contactForm._replyto.value;
+        const motivo = contactForm.motivo.value;
+        const mensaje = contactForm.mensaje.value;
+        const asunto = encodeURIComponent('Contacto desde lionilustre.web.app — ' + motivo);
+        const cuerpo = encodeURIComponent(
+          'Nombre: ' + nombre + '\nCorreo: ' + email + '\nMotivo: ' + motivo + '\n\n' + mensaje
+        );
+        window.location.href = 'mailto:contacto@lionilustre.com?subject=' + asunto + '&body=' + cuerpo;
+
+        formStatus.textContent = 'Configura tu ID de Formspree en index.html para envíos automáticos. Por ahora, se abrió tu correo con el mensaje listo.';
+        formStatus.className = 'form-status is-error';
+        return;
+      }
+
+      formStatus.textContent = 'Enviando...';
+      formStatus.className = 'form-status';
+
+      try {
+        const respuesta = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (respuesta.ok) {
+          formStatus.textContent = '¡Mensaje enviado! Te responderé pronto.';
+          formStatus.className = 'form-status is-ok';
+          contactForm.reset();
+        } else {
+          throw new Error('Respuesta no exitosa del servidor');
+        }
+      } catch (error) {
+        formStatus.textContent = 'No se pudo enviar. Escríbeme directo a contacto@lionilustre.com';
+        formStatus.className = 'form-status is-error';
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------
+     9. AÑO AUTOMÁTICO EN EL PIE DE PÁGINA
+     Para que nunca tengas que actualizar el "© 2026" a mano.
+  ----------------------------------------------------------------- */
+  const anioActual = document.getElementById('anioActual');
+  if (anioActual) anioActual.textContent = new Date().getFullYear();
+
+  /* --------------------------------------------------------------
+     BOTÓN "VOLVER ARRIBA"
+  ----------------------------------------------------------------- */
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+});
+
+</script>
+</body>
+</html>
